@@ -17,7 +17,7 @@ def get_first_timestamp(
         *args,
         **kwargs) -> Optional[datetime]:
     """With the given path, either look for the first file (if a folder) or get the timestamp directly (if a file).
-    
+
     :keyword extract_date:      Function which takes a path to a log file and returns the timestamp of the first
                                 measurement.
     
@@ -35,7 +35,7 @@ def get_first_timestamp(
 
     # To avoid mutable default arguments.
     if file_extensions is None:
-        file_extensions = ["MF4"]
+        file_extensions = ["MF4","MFC"]
 
     # Ensure patterns a lower case
     extensions = {ext.lower() for ext in file_extensions}
@@ -87,7 +87,7 @@ def get_log_files(
     
     # To avoid mutable default arguments.
     if file_extensions is None:
-        file_extensions = ["MF4"]
+        file_extensions = ["MF4","MFC"]
     
     # Ensure patterns a lower case
     extensions = {ext.lower() for ext in file_extensions}
